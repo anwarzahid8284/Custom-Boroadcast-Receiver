@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Caller Announcer</string>
+    <string name="openDrawer">Open Navigation Drawer</string>
+    <string name="closeDrawer">Close Navigation Drawer</string>
+    <string name="flashlight">Camera permission  for Blinking flashlight</string>
+    <string name="camera">Camera</string>
+    <string name="flash_on_call_permission">Flash On Call Permission</string>
+    <string name="read_phone_state">Read Phone State</string>
+    <string name="read_different_states_of_phone">Read different states of Phone</string>
+    <string name="flash_on_notification_permission">Flash On Notification Permission</string>
+    <string name="notification">Notification</string>
+    <string name="listen_for_notification">Listen for notification</string>
+    <string name="active">Active</string>
+    <string name="incoming_call">Incoming Call</string>
+    <string name="flash_for_incoming_calls">flash for Incoming calls</string>
+    <string name="profile">Profile</string>
+    <string name="don_t_blink">Don\'t Blink</string>
+    <string name="don_t_blink_while_use_phone">Don\'t blink while use phone.</string>
+    <string name="ring_mode">Ring Mode</string>
+    <string name="blinking_while_phone_in_ring_mode">Blinking while phone in ring mode</string>
+    <string name="vibration_mode">Vibration Mode</string>
+    <string name="blinking_while_phone_in_vibration_mode">Blinking while phone in vibration mode.</string>
+    <string name="silent_mode">Silent Mode</string>
+    <string name="blinking_while_phone_in_silent_mode">Blinking while phone in silent mode.</string>
+    <string name="setting">Setting</string>
+    <string name="blinking_speed">Speed</string>
+    <string name="speed_of_blinking_flashlight">Speed of Blinking flashlight</string>
+    <string name="_100ms">100ms</string>
+    <string name="blinking_frequency">Frequency</string>
+    <string name="frequency_of_blinking_on_incoming_call">Frequency of blinking on Incoming call</string>
+    <string name="_5_times">5 Times</string>
+    <string name="battery">Battery</string>
+    <string name="disable_blinking_when_battery_percentage">Disable Blinking When battery percentage</string>
+    <string name="_10">10%</string>
+    <string name="foreground_service_running">Foreground Service Running</string>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.callerannouncer.fragments.HomeFragment"
+        android:label="Call Name Announcer"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_announceCallFragment"
+            app:destination="@id/announceCallFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_announceSMSFragment"
+            app:destination="@id/announceSMSFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_flashOnCallFragment"
+            app:destination="@id/flashOnCallFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_torchFragment"
+            app:destination="@id/torchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_flashOnNotificationFragment"
+            app:destination="@id/flashOnNotificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/announceCallFragment"
+        android:name="com.example.callerannouncer.fragments.AnnounceCallFragment"
+        android:label="Call Announcer"
+        tools:layout="@layout/fragment_announce_call"/>
+    <fragment
+        android:id="@+id/announceSMSFragment"
+        android:name="com.example.callerannouncer.fragments.AnnounceSMSFragment"
+        android:label="SMS Announcer"
+        tools:layout="@layout/fragment_announce_sms"/>
+    <fragment
+        android:id="@+id/flashOnCallFragment"
+        android:name="com.example.callerannouncer.fragments.FlashOnCallFragment"
+        android:label="Flash On Call"
+        tools:layout="@layout/fragment_flash_on_call"/>
+    <fragment
+        android:id="@+id/flashOnNotificationFragment"
+        android:name="com.example.callerannouncer.fragments.FlashOnNotificationFragment"
+        android:label="Flash On Notification"
+        tools:layout="@layout/fragment_flash_on_notification"/>
+    <fragment
+        android:id="@+id/torchFragment"
+        android:name="com.example.callerannouncer.fragments.TorchFragment"
+        android:label="Torch"
+        tools:layout="@layout/fragment_torch"/>
+</navigation>

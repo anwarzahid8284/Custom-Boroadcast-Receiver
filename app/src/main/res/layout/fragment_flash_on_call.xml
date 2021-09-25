@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FlashOnCallFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activeContainerID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/activeTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/active"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/incomingCallTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/incoming_call"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/activeTextID"
+                        app:layout_constraintTop_toBottomOf="@id/activeTextID" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/flash_for_incoming_calls"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+
+                        app:layout_constraintStart_toStartOf="@id/activeTextID"
+                        app:layout_constraintTop_toBottomOf="@id/incomingCallTextID" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/incomingCallSwitchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:thumb="@drawable/custom_switch_thumb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/incomingCallTextID"
+                        app:track="@drawable/custom_switch_track" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileContainerID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activeContainerID">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/profileTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/profile"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/doNotBlinkTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/don_t_blink"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/profileTextID" />
+
+                    <TextView
+                        android:id="@+id/donotBlinkDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/don_t_blink_while_use_phone"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/doNotBlinkTextID" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/doNotBlinkSwitchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:thumb="@drawable/custom_switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="@id/donotBlinkDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/doNotBlinkTextID"
+                        app:track="@drawable/custom_switch_track" />
+
+                    <View
+                        android:id="@+id/line1ID"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintEnd_toEndOf="@id/doNotBlinkSwitchID"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/donotBlinkDesID" />
+
+                    <TextView
+                        android:id="@+id/ringModeTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/ring_mode"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/line1ID" />
+
+                    <TextView
+                        android:id="@+id/ringModeDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/blinking_while_phone_in_ring_mode"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/ringModeTextID" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/ringModeSwitchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:thumb="@drawable/custom_switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="@id/ringModeDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ringModeTextID"
+                        app:track="@drawable/custom_switch_track" />
+
+                    <View
+                        android:id="@+id/line2ID"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintEnd_toEndOf="@id/doNotBlinkSwitchID"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/ringModeDesID" />
+
+                    <TextView
+                        android:id="@+id/vibrationModeTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/vibration_mode"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/line2ID" />
+
+                    <TextView
+                        android:id="@+id/vibrationModeDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/blinking_while_phone_in_vibration_mode"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/vibrationModeTextID" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/vibrationModeSwitchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:thumb="@drawable/custom_switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="@id/vibrationModeDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/vibrationModeTextID"
+                        app:track="@drawable/custom_switch_track" />
+
+                    <View
+                        android:id="@+id/line3ID"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintEnd_toEndOf="@id/doNotBlinkSwitchID"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/vibrationModeDesID" />
+
+                    <TextView
+                        android:id="@+id/silentModeTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/silent_mode"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/line3ID" />
+
+                    <TextView
+                        android:id="@+id/silentModeDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/blinking_while_phone_in_silent_mode"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/profileTextID"
+                        app:layout_constraintTop_toBottomOf="@id/silentModeTextID" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/silentModeSwitchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:thumb="@drawable/custom_switch_thumb"
+                        app:layout_constraintBottom_toBottomOf="@id/silentModeDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/silentModeTextID"
+                        app:track="@drawable/custom_switch_track" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/settingContainerID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileContainerID">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/settingTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/setting"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/flashTypeID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flash Type"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/settingTextID" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGrpID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/flashTypeID">
+
+                        <RadioButton
+                            android:id="@+id/blinkingRadioButtonID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="Continues"
+                            android:checked="true"
+                            android:buttonTint="@color/colorPrimary"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="normal" />
+
+                        <RadioButton
+                            android:id="@+id/frequencyRadioButtonID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="normal"
+                            android:fontFamily="sans-serif"
+                            android:textSize="@dimen/_8ssp"
+                            android:buttonTint="@color/colorPrimary"
+                            android:text="Threshold" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/blinkingSpeedTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/blinking_speed"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/radioGrpID" />
+
+                    <TextView
+                        android:id="@+id/blinkingSpeedDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/speed_of_blinking_flashlight"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/blinkingSpeedTextID" />
+
+                    <TextView
+                        android:id="@+id/speedTimeTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/_100ms"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@id/blinkingSpeedDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/blinkingSpeedTextID" />
+
+                    <SeekBar
+                        android:id="@+id/speedBlinkingSeekBarID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:maxHeight="@dimen/_3sdp"
+                        android:max="10"
+                        android:min="1"
+                        android:progress="10"
+                        android:progressDrawable="@drawable/seekbar_style"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/custom_thum"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/blinkingSpeedDesID" />
+
+                    <View
+                        android:id="@+id/line4ID"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintEnd_toEndOf="@id/speedBlinkingSeekBarID"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/speedBlinkingSeekBarID" />
+
+                    <TextView
+                        android:id="@+id/blinkingFrequencyTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/blinking_frequency"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/line4ID" />
+
+                    <TextView
+                        android:id="@+id/blinkingFrequencyDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/frequency_of_blinking_on_incoming_call"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/blinkingFrequencyTextID" />
+
+                    <TextView
+                        android:id="@+id/frequencyTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/_5_times"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@id/blinkingFrequencyDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/blinkingFrequencyTextID" />
+
+                    <SeekBar
+                        android:id="@+id/frequencySeekBarID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:maxHeight="@dimen/_3sdp"
+                        android:max="20"
+                        android:min="1"
+                        android:progress="10"
+                        android:progressDrawable="@drawable/disable_seekbar_style"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/disable_thumb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/frequencyTextID" />
+
+                    <View
+                        android:id="@+id/line5ID"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintEnd_toEndOf="@id/speedBlinkingSeekBarID"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/frequencySeekBarID" />
+
+                    <TextView
+                        android:id="@+id/batteryTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/battery"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/line5ID" />
+
+                    <TextView
+                        android:id="@+id/batteryDesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/disable_blinking_when_battery_percentage"
+                        android:textSize="@dimen/_8ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/settingTextID"
+                        app:layout_constraintTop_toBottomOf="@id/batteryTextID" />
+
+                    <TextView
+                        android:id="@+id/batteryPercentageTextID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/_10"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@id/batteryDesID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/batteryTextID" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

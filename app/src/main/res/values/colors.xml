@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#0c78e5</color>
+    <color name="colorPrimary">#0095ff</color>
+    <color name="colorAccent">#0095ff</color>
+
+
+    <color name="whiteColor">#ffffff</color>
+    <color name="blackColor">#000000</color>
+    <color name="switch_disable_color">#1C000000</color>
+    <color name="light_grey">#11000000</color>
+    <color name="dark_grey">#33000000</color>
+</resources>
